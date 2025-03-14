@@ -31,6 +31,7 @@ public class decompressZip {
         try {
             result = this.doUnZip(this.targetPath);
         } catch (IOException e) {
+            System.out.println(e);
             result = false;
         }
         return result;
