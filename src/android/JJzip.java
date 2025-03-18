@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import androidx.annotation.RequiresApi;
+import android.os.Build;
 
 public class JJzip extends CordovaPlugin {
     public static final int UPSIDE_DOWN_CAKE = 34;
