@@ -1,4 +1,4 @@
-/*
+    /*
  * The MIT License (MIT)
  * Copyright (c) 2015 Joel De La Torriente - jjdltc - https://github.com/jjdltc
  * See a full copy of license in the root folder of the project
@@ -13,9 +13,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import androidx.annotation.RequiresApi;
 
 public class JJzip extends CordovaPlugin {
-
+    public static final int UPSIDE_DOWN_CAKE = 34;
     private enum ACTIONS {
           zip
         , unzip
@@ -29,6 +30,7 @@ public class JJzip extends CordovaPlugin {
      * @param callbackContext   The callback id used when calling back into JavaScript.
      * @return                  True if the action was valid, false if not.
      */
+    @RequiresApi(api = UPSIDE_DOWN_CAKE)
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         boolean result          = true;
         String actionType       = "";
