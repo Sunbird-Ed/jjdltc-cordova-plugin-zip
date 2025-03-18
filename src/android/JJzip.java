@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import androidx.annotation.RequiresApi;
+import android.os.Build;
 
 public class JJzip extends CordovaPlugin {
     public static final int UPSIDE_DOWN_CAKE = 34;
@@ -30,7 +30,6 @@ public class JJzip extends CordovaPlugin {
      * @param callbackContext   The callback id used when calling back into JavaScript.
      * @return                  True if the action was valid, false if not.
      */
-    @RequiresApi(api = UPSIDE_DOWN_CAKE)
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         boolean result          = true;
         String actionType       = "";
@@ -50,6 +49,9 @@ public class JJzip extends CordovaPlugin {
             case unzip:
                 actionType              = "decompress";
                 decompressZip unZip     = new decompressZip(validOptions);
+                if (Build.VERSION.SDK_INT >= UPSIDE_DOWN_CAKE) {
+                dalvik.system.ZipPathValidator.clearCallback();
+                }
                 result                  = unZip.unZip();
             break;
             default:
