@@ -20,6 +20,7 @@ public class decompressZip {
     private String sourceEntry  = "";
     private String targetPath   = "";
     private final int BUFFER_SIZE = 2048;
+    public static final int UPSIDE_DOWN_CAKE = 34;
 
     public decompressZip(JSONObject opts) {
         this.sourceEntry    = opts.optString("sourceEntry");

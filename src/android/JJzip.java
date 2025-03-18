@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JJzip extends CordovaPlugin {
-
+    public static final int UPSIDE_DOWN_CAKE = 34;
     private enum ACTIONS {
           zip
         , unzip
@@ -29,7 +29,7 @@ public class JJzip extends CordovaPlugin {
      * @param callbackContext   The callback id used when calling back into JavaScript.
      * @return                  True if the action was valid, false if not.
      */
-    @RequiresApi(api = Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+    @RequiresApi(api = UPSIDE_DOWN_CAKE)
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         boolean result          = true;
         String actionType       = "";
