@@ -50,6 +50,9 @@ public class JJzip extends CordovaPlugin {
             case unzip:
                 actionType              = "decompress";
                 decompressZip unZip     = new decompressZip(validOptions);
+                if (Build.VERSION.SDK_INT >= UPSIDE_DOWN_CAKE) {
+                dalvik.system.ZipPathValidator.clearCallback();
+                }
                 result                  = unZip.unZip();
             break;
             default:
