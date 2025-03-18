@@ -27,7 +27,7 @@ public class decompressZip {
         this.targetPath     = opts.optString("targetPath");
     }
     
-    @RequiresApi(api = Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+    @RequiresApi(api = UPSIDE_DOWN_CAKE)
     public boolean unZip(){
         boolean result = false;
         try {
@@ -44,7 +44,7 @@ public class decompressZip {
      * @param actualTargetPath  Path to un-zip
      * @throws IOException
      */ 
-    @RequiresApi(api = Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+    @RequiresApi(api = UPSIDE_DOWN_CAKE)
     public boolean doUnZip(String actualTargetPath) throws IOException{
         File target = new File(actualTargetPath);
         if (!target.exists()) {
