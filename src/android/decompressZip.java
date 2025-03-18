@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+import androidx.annotation.RequiresApi;
 
 public class decompressZip {
 
@@ -27,7 +28,7 @@ public class decompressZip {
         this.targetPath     = opts.optString("targetPath");
     }
     
-    RequiresApi(api = UPSIDE_DOWN_CAKE)
+    @RequiresApi(api = UPSIDE_DOWN_CAKE)
     public boolean unZip(){
         boolean result = false;
         try {
@@ -44,7 +45,7 @@ public class decompressZip {
      * @param actualTargetPath  Path to un-zip
      * @throws IOException
      */ 
-    RequiresApi(api = UPSIDE_DOWN_CAKE)
+    @RequiresApi(api = UPSIDE_DOWN_CAKE)
     public boolean doUnZip(String actualTargetPath) throws IOException{
         File target = new File(actualTargetPath);
         if (!target.exists()) {
