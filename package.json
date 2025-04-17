@@ -1,0 +1,40 @@
+{
+  "name": "cordova-zip-plugin",
+  "version": "1.1.0",
+  "description": "Cordova zip compress and decompress",
+  "cordova": {
+    "id": "com.jjdltc.cordova.plugin.zip",
+    "platforms": [
+      "android",
+      "ios"      
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swayangjit/jjdltc-cordova-plugin-zip.git"
+  },
+  "keywords": [
+    "cordova",
+    "zip",
+    "compress",
+    "decompress",
+    "unzip",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "1.1.0": { 
+        "cordova" : ">=7.0.0",
+        "cordova-ios": ">=4.4.0"
+      }
+    }
+  },
+  "author": "Joel De La Torriente <jjdltc@gmail.com> (https://github.com/jjdltc)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jjdltc/jjdltc-cordova-plugin-zip/issues"
+  },
+  "homepage": "https://github.com/jjdltc/jjdltc-cordova-plugin-zip#readme"
+}
