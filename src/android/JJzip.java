@@ -1,4 +1,4 @@
-/*
+ /*
  * The MIT License (MIT)
  * Copyright (c) 2015 Joel De La Torriente - jjdltc - https://github.com/jjdltc
  * See a full copy of license in the root folder of the project
@@ -13,9 +13,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.os.Build;
 
 public class JJzip extends CordovaPlugin {
-
+    public static final int UPSIDE_DOWN_CAKE = 34;
     private enum ACTIONS {
           zip
         , unzip
@@ -48,6 +49,9 @@ public class JJzip extends CordovaPlugin {
             case unzip:
                 actionType              = "decompress";
                 decompressZip unZip     = new decompressZip(validOptions);
+                if (Build.VERSION.SDK_INT >= UPSIDE_DOWN_CAKE) {
+                dalvik.system.ZipPathValidator.clearCallback();
+                }
                 result                  = unZip.unZip();
             break;
             default:
