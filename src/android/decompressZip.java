@@ -14,12 +14,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+import android.os.Build;
 
 public class decompressZip {
 
     private String sourceEntry  = "";
     private String targetPath   = "";
     private final int BUFFER_SIZE = 2048;
+    public static final int UPSIDE_DOWN_CAKE = 34;
 
     public decompressZip(JSONObject opts) {
         this.sourceEntry    = opts.optString("sourceEntry");
@@ -31,6 +33,7 @@ public class decompressZip {
         try {
             result = this.doUnZip(this.targetPath);
         } catch (IOException e) {
+            System.out.println(e);
             result = false;
         }
         return result;
@@ -46,7 +49,9 @@ public class decompressZip {
         if (!target.exists()) {
             target.mkdir();
         }
-        
+        if (Build.VERSION.SDK_INT >= UPSIDE_DOWN_CAKE) {
+        dalvik.system.ZipPathValidator.clearCallback();
+        }
         ZipInputStream zipFl= new ZipInputStream(new FileInputStream(this.sourceEntry));
         ZipEntry entry      = zipFl.getNextEntry();
         
